@@ -1,0 +1,16 @@
+{
+  "offers": [
+    {
+      "id": "o1",
+      "active": false,
+      "title_ar": "اثنين صمدو جامبو",
+      "title_en": "Two Samado Jumbo",
+      "text_ar": "مثال على عرض. عدّله أو احذفه من لوحة إدارة العروض.",
+      "text_en": "Example offer. Edit or delete it in Manage offers.",
+      "price": "18",
+      "old_price": "20",
+      "img": "samado",
+      "ends": ""
+    }
+  ]
+}
