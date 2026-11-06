@@ -1,0 +1,60 @@
+content:
+  - name: offers
+    label: العروض / Offers
+    type: file
+    path: offers.json
+    fields:
+      - name: offers
+        label: العروض (اتركها فارغة لإخفاء قسم العروض)
+        type: object
+        list: true
+        fields:
+          - name: active
+            label: ظاهر للزوار / Visible
+            type: boolean
+          - name: title_ar
+            label: العنوان (عربي)
+            type: string
+            required: true
+          - name: title_en
+            label: Title (English)
+            type: string
+          - name: text_ar
+            label: الوصف (عربي)
+            type: string
+          - name: text_en
+            label: Description (English)
+            type: string
+          - name: price
+            label: السعر الجديد (ريال)
+            type: string
+          - name: old_price
+            label: السعر القديم (اختياري)
+            type: string
+          - name: img
+            label: الصورة / Picture
+            type: select
+            options:
+              values:
+                - { name: samado, label: عصير صمدو }
+                - { name: maldives, label: المالديف }
+                - { name: cocktail, label: كوكتيل }
+                - { name: fanoos, label: الفانوس }
+                - { name: avocado, label: أفوكادو }
+                - { name: watermelon, label: حبحب }
+                - { name: lemon-mint, label: ليمون نعناع }
+                - { name: areeka, label: عريكة }
+                - { name: مانجو, label: مانجو }
+                - { name: فراولة, label: فراولة }
+                - { name: برتقال, label: برتقال }
+                - { name: ملك شيك أوريو, label: ملك شيك أوريو }
+          - name: ends
+            label: ينتهي في (اختياري) / Ends on
+            type: date
+            options:
+              format: yyyy-MM-dd
+            default: ""
+          - name: id
+            label: id
+            type: string
+            hidden: true
