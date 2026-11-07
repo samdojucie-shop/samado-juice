@@ -576,8 +576,8 @@ section[id]{scroll-margin-top:80px}
     <div class="wrap">
       <div class="contact">
         <div>
-          <h2 id="ct-title" data-en="Orders and questions">للطلبات والاستفسار</h2>
-          <p data-en="Call us or message us on WhatsApp at the same number.">اتصل أو راسلنا واتساب على نفس الرقم.</p>
+          <h2 id="ct-title" data-en="Follow us">تابعنا</h2>
+          <p data-en="Our latest drinks and offers on our accounts.">جديدنا وعروضنا على حساباتنا.</p>
           <div class="social">
             <a href="https://www.instagram.com/samado_juice" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2Zm0 1.8c2.7 0 3 0 4 .1 2.6.1 3.9 1.4 4 4 .1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.6-1.4 3.9-4 4-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.6-.1-3.9-1.4-4-4C3.8 15 3.8 14.7 3.8 12s0-3 .1-4c.1-2.6 1.4-3.9 4-4 1-.1 1.3-.1 4.1-.1Z"/></svg>Instagram</a>
             <a href="https://www.tiktok.com/@samdo_azizea" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.3v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.2 6.2 0 1 0 5.3 6.2V8.6a7.9 7.9 0 0 0 4.4 1.3V6.6a4.4 4.4 0 0 1-4.4-4.6Z"/></svg>TikTok</a>
@@ -586,9 +586,6 @@ section[id]{scroll-margin-top:80px}
           </div>
         </div>
         <div class="phone">
-          <output id="phone" class="num">059 578 0588</output>
-          <button class="copy" id="copy" type="button" data-en="Copy number">نسخ الرقم</button>
-          <a class="btn lime" href="https://wa.me/966595780588" target="_blank" rel="noopener" data-en="Order on WhatsApp">اطلب عبر واتساب</a>
           <p style="width:100%;margin:0;opacity:.75" data-enh="TikTok: <span dir=&quot;ltr&quot;>@samdo_azizea</span> · Other platforms: <span dir=&quot;ltr&quot;>@samado_juice</span>">تيك توك: <span dir="ltr">@samdo_azizea</span> · باقي المنصات: <span dir="ltr">@samado_juice</span></p>
         </div>
       </div>
@@ -801,7 +798,7 @@ buildReviews();
 applyLang();
 
 const btn=document.getElementById('copy');
-btn.addEventListener('click',()=>{
+if(btn)btn.addEventListener('click',()=>{
   const reset=()=>setTimeout(()=>btn.textContent=tx('نسخ الرقم','Copy number'),1800);
   const done=()=>{btn.textContent=tx('تم النسخ','Copied');reset()};
   const fallback=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('phone'));const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent=tx('الرقم محدد، انسخه','Number selected, copy it')};
