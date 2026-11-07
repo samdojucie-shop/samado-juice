@@ -381,12 +381,12 @@ section[id]{scroll-margin-top:80px}
 .disc::before{content:"";position:absolute;inset:-60%;background:repeating-linear-gradient(-30deg,#9BC93B 0 56px,#fff 56px 70px,#E3262B 70px 100px,#fff 100px 114px,#1472B6 114px 144px,#fff 144px 158px);animation:stripes 5s linear infinite;will-change:transform}
 @keyframes stripes{from{transform:translate3d(0,0,0)}to{transform:translate3d(79px,136.84px,0)}}
 .hcup{position:absolute;width:auto;max-width:none}
-.stage .main{height:92%;left:50%;top:2%;transform:translateX(-50%) rotate(-6deg);animation:hmain 5s ease-in-out infinite}
+.stage .main{height:92%;left:0;right:0;margin-inline:auto;top:2%;transform:rotate(-6deg);animation:hmain 5s ease-in-out infinite}
 .stage .s1{height:38%;left:-4%;bottom:4%;--r:-14deg;transform:rotate(var(--r));animation:hbob 4.2s ease-in-out infinite}
 .stage .s2{height:36%;right:-2%;top:6%;--r:16deg;transform:rotate(var(--r));animation:hbob 4.8s ease-in-out infinite -1.5s}
 .stage .fr{position:absolute;--r:0deg;animation:hbob 6s ease-in-out infinite -2s}
 .hcup,.stage .fr{will-change:transform}
-@keyframes hmain{0%,100%{transform:translateX(-50%) translateY(0) rotate(-6deg)}50%{transform:translateX(-50%) translateY(-16px) rotate(-3deg)}}
+@keyframes hmain{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(-3deg)}}
 @keyframes hbob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-12px) rotate(calc(var(--r) + 4deg))}}
 .page[dir="ltr"] .hero2 h1{font-family:var(--f-body);font-weight:800;letter-spacing:-.02em}
 @media (max-width:820px){.h2w{grid-template-columns:1fr;padding-block:30px 40px;text-align:center}.hero2 .cta,.hero2 .facts{justify-content:center}.hero2 .lede{margin-inline:auto}.stage{max-width:360px;order:-1}}
