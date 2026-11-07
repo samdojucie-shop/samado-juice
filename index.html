@@ -358,6 +358,8 @@ section[id]{scroll-margin-top:80px}
 .cqty button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;color:var(--ink)}
 .cname{display:grid;gap:4px;font-size:13px;color:var(--muted);margin-top:8px}
 .ctot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin-top:8px}
+.cerr{color:var(--red);font-size:13px;font-weight:600}
+.cname input.bad{border-color:var(--red);background:#FFF5F5}
 .clearbtn{border:0;background:none;color:var(--muted);font:600 13px var(--f-body);cursor:pointer;align-self:center;padding:8px}
 /* small phones */
 .nav .btn{white-space:nowrap}
@@ -641,7 +643,7 @@ section[id]{scroll-margin-top:80px}
   <div class="sheet">
     <div class="shead"><h2 id="cttl" data-en="Your basket">سلتك</h2><button type="button" class="mx" data-close aria-label="إغلاق" data-en-label="Close">✕</button></div>
     <div id="cartlist"></div>
-    <label class="cname" for="cname"><span data-en="Your name (optional)">اسمك (اختياري)</span><input id="cname" autocomplete="name"></label>
+    <label class="cname" for="cname"><span data-en="Your name">اسمك</span><input id="cname" autocomplete="name" required aria-describedby="cnameerr"><small id="cnameerr" class="cerr" hidden data-en="Please write your name to send the order.">اكتب اسمك عشان نرسل الطلب.</small></label>
     <div class="ctot"><span data-en="Total">المجموع</span><b id="ctotal" class="num"></b></div>
     <a class="btn wa wide" id="cartsend" href="#" target="_blank" rel="noopener" data-en="Send order on WhatsApp">أرسل الطلب عبر واتساب</a>
     <button type="button" class="clearbtn" id="cartclear" data-en="Empty basket">إفراغ السلة</button>
@@ -901,10 +903,10 @@ function drawCart(){
 }
 document.getElementById('cartlist').onclick=e=>{const m=e.target.closest('[data-m]'),p=e.target.closest('[data-p]');
   if(m){const i=CART[+m.dataset.m];i.q--;if(i.q<1)CART.splice(+m.dataset.m,1)}else if(p){CART[+p.dataset.p].q++}else return;saveCart();drawCart();if(!CART.length)close(document.getElementById('cart'));};
-document.getElementById('cname').addEventListener('input',drawCart);
+document.getElementById('cname').addEventListener('input',()=>{const ci=document.getElementById('cname');if(ci.value.trim()){document.getElementById('cnameerr').hidden=true;ci.classList.remove('bad')}drawCart()});
 document.getElementById('cartfab').onclick=()=>{drawCart();open('cart')};
 document.getElementById('cartclear').onclick=()=>{CART=[];saveCart();drawCart();close(document.getElementById('cart'))};
-document.getElementById('cartsend').addEventListener('click',()=>{setTimeout(()=>{CART=[];saveCart();drawCart();close(document.getElementById('cart'))},800)});
+document.getElementById('cartsend').addEventListener('click',e=>{const ci=document.getElementById('cname');if(!ci.value.trim()){e.preventDefault();document.getElementById('cnameerr').hidden=false;ci.classList.add('bad');ci.focus();return;}setTimeout(()=>{CART=[];saveCart();drawCart();close(document.getElementById('cart'))},800)});
 buildReviews();
 applyLang();
 drawCart();
