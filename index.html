@@ -683,8 +683,8 @@ const D={
   ["ملك شيك أوريو",[490,750],"#D9CAC2"],["ملك شيك كندر",[690,980],"#F2C0A4"],["ملك شيك مارس",[690,890],"#7A4A2A"],
   ["ملك شيك سنكرز",[660,800],"#B08363"],["ملك شيك تويكس",[680,810],"#B78965"],["ميلك شيك لوتس",[450,610],"#C9873F"],
   ["ملك شيك كت كات",[690,750],"#D5B596"],["ملك شيك سيريلاك",[490,520],"#CCA07A"]]},
- fruit:{cols:["صغير","وسط","كبير","عائلي"],p:[10,15,20,60],price:1,extra:[["عريكة",20]],rows:[
-  ["صحون فواكه",[],"#F6B73C","platter",{tile:1}],["عريكة",[],"#E9C6A0","areeka",{sizes:[["حجم واحد",20]]}]]},
+ fruit:{cols:["صغير","وسط","كبير","عائلي"],p:[10,15,20,60],price:1,extra:[["عريكة فواكه",20]],rows:[
+  ["صحن فواكه",[],"#F6B73C","platter",{tile:1}],["عريكة فواكه",[],"#E9C6A0","areeka",{sizes:[["حجم واحد",20]]}]]},
  box:{cols:["بوكس ١٢ علبة","بوكس ٢٤ علبة","بوكس ٤٠ علبة"],p:[60,110,150],price:1,rows:[
   ["بوكس عصير",[],"#9BC93B","box",{tile:1}]]},
  flav:{list:[["توت أزرق","#4F6FD8"],["توت أحمر","#E0334C"],["توت أسود","#2E2244"],["كرز","#A3122E"],["حبحب","#EF4B4B"],["فراولة","#F0506A"],["رمان","#C21E3A"],["مكس","conic-gradient(#E3262B 0 33%,#9BC93B 0 66%,#1472B6 0)"]]}
@@ -697,7 +697,7 @@ document.querySelectorAll('img[data-src]').forEach(i=>i.src=PH[i.dataset.src]);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* ---------- language ---------- */
-const NAME_EN={"صحون فواكه":"Fruit platter","بوكس عصير":"Juice box","عصير صمدو":"Samado Juice","المالديف":"Maldives","النسيم":"Al Naseem","عصير عرائسي":"Araisi Juice","عرائسي فواكه":"Araisi Fruits","مسامير":"Masameer","كوكتيل":"Cocktail","عصير جي":"Juice G","اصفهاني":"Isfahani","عوار قلب":"Awar Galb","لمسة حنان":"Lamsat Hanan","أفوكادو خاص":"Special Avocado","أفوكادو صمدو":"Samado Avocado","منعش":"Refresher","فرنسيسكو":"Francisco","خلطة رجيم":"Diet Mix","الفانوس":"Al Fanoos",
+const NAME_EN={"صحن فواكه":"Fruit platter","عريكة فواكه":"Fruit areeka","بوكس عصير":"Juice box","عصير صمدو":"Samado Juice","المالديف":"Maldives","النسيم":"Al Naseem","عصير عرائسي":"Araisi Juice","عرائسي فواكه":"Araisi Fruits","مسامير":"Masameer","كوكتيل":"Cocktail","عصير جي":"Juice G","اصفهاني":"Isfahani","عوار قلب":"Awar Galb","لمسة حنان":"Lamsat Hanan","أفوكادو خاص":"Special Avocado","أفوكادو صمدو":"Samado Avocado","منعش":"Refresher","فرنسيسكو":"Francisco","خلطة رجيم":"Diet Mix","الفانوس":"Al Fanoos",
 "مانجو":"Mango","فراولة":"Strawberry","جوافة":"Guava","شمام":"Cantaloupe","خريز":"Kharez Melon","برتقال":"Orange","كيوي":"Kiwi","ليمون":"Lemon","موز":"Banana","قريب فروت":"Grapefruit","أناناس":"Pineapple","عنب":"Grape","رمان":"Pomegranate","حبحب":"Watermelon","خوخ":"Peach","شمندر":"Beetroot","جزر":"Carrot","تفاح":"Apple","باشن":"Passion Fruit","زنجبيل":"Ginger",
 "ملك شيك أوريو":"Oreo Milkshake","ملك شيك كندر":"Kinder Milkshake","ملك شيك مارس":"Mars Milkshake","ملك شيك سنكرز":"Snickers Milkshake","ملك شيك تويكس":"Twix Milkshake","ميلك شيك لوتس":"Lotus Milkshake","ملك شيك كت كات":"KitKat Milkshake","ملك شيك سيريلاك":"Cerelac Milkshake",
 "توت أزرق":"Blueberry","توت أحمر":"Red Berry","توت أسود":"Blackberry","كرز":"Cherry","مكس":"Mix","ليمون نعناع":"Lemon Mint","عريكة":"Areeka","بطيخ":"Watermelon"};
